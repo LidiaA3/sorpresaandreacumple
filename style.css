@@ -1,0 +1,143 @@
+:root {
+    --blue: #E2F0F0;
+    --yellow: #FFF06E;
+    --text: #19190A;
+}
+
+@font-face {
+    font-family: Inknut;
+    src: url(fonts/InknutAntiqua-Bold.woff);
+}
+@font-face {
+    font-family: Indie;
+    src: url(fonts/IndieFlower-Regular.woff);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat-Medium.woff);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text);
+    font-family: 'Montserrat';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: all 1s;
+}
+
+header {
+    background-color: var(--yellow);
+    padding: 1.5rem;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inknut';
+}
+
+p {
+    text-align: center;
+    font-size: larger;
+}
+
+.span {
+    font-family: 'Indie';
+    display: block;
+    font-size: 1.6em;
+}
+
+.title {
+    font-size: 3rem;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Indie';
+    font-size: 2rem;
+    text-align: center;
+    margin-top: -1rem;
+}
+
+figure {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 16 / 12;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.revel-hidden {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.revel-hidden span {
+    animation: beap 1s ease-in-out infinite;
+    transition: all;
+}
+
+@keyframes beap {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.revel-hidden img {
+    display: none;
+}
+
+.revel-active span {
+    display: none;
+}
+
+footer {
+    background-color: var(--text);
+    color: #E2F0F0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .1em solid var(--text);
+    white-space: nowrap;
+    animation: 
+      typing 2.5s steps(60, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to {width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--text); }
+  }
